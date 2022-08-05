@@ -9,6 +9,7 @@
   /* #153438, #1c3948,#284f61,#71989b,#e4960e,#eba92a color pallets(sage,slate blue,mustard*/
   position: sticky;
   top: 0;
+  z-index: 99;
 }
 .item {
   flex: 1;
