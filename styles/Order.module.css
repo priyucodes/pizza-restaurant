@@ -1,0 +1,87 @@
+.container {
+  padding: 50px;
+  display: flex;
+}
+.left {
+  flex: 2;
+}
+.table {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 50px;
+}
+.row:last-child {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+/* 
+.status{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+} */
+.done {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.inProgress {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  animation: inProgress 1s ease infinite alternate;
+}
+@keyframes inProgress {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.undone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.3;
+}
+
+.undone .checkedIcon,
+.inProgress .checkedIcon {
+  display: none;
+}
+.right {
+  flex: 1;
+}
+.wrapper {
+  width: 90%;
+  max-height: 300px;
+  background-color: #333;
+  padding: 50px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.totalTextTitle {
+  margin-right: 10px;
+}
+.button {
+  background-color: #fff;
+  min-height: 30px;
+  color: teal;
+  width: 200px;
+  font-weight: bold;
+  margin-top: 20px;
+  border: none;
+  padding: 15px 0px;
+  border-radius: 40px;
+}
+.button:disabled {
+  color: #fff;
+  background-color: rgba(255, 0, 0, 0.2);
+  cursor: not-allowed;
+}
