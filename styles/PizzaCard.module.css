@@ -23,3 +23,16 @@
   text-align: center;
   color: #1d1d1d;
 }
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+  .title {
+    font-size: 30px;
+  }
+  .price,
+  .desc {
+    font-size: 24px;
+  }
+}
