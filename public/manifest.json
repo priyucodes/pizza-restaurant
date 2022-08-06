@@ -1,0 +1,33 @@
+{
+  "name": "Peeja Restaurant Web App",
+  "short_name": "Peeja",
+  "icons": [
+    {
+      "src": "/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+
+    {
+      "src": "/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff",
+  "theme_color": "#d1441e",
+  "description": "A Peeja Restaurant App, with a lot of PWA love.",
+  "dir": "ltr",
+  "lang": "en-US",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.google.samples.apps.test"
+    }
+  ]
+}
