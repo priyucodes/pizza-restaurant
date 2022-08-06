@@ -11,30 +11,33 @@ const Order = () => {
     <div className={styles.container}>
       <div className={styles.left}>
         <div className={styles.row}>
-          {' '}
           <table className={styles.table}>
-            <tr className={styles.trTitle}>
-              <th>Order ID</th>
-              <th>Customer</th>
-              <th>Address</th>
-              <th>Total</th>
-            </tr>
-            <tr className={styles['tr__value']}>
-              <td>
-                <span className={styles.id}>328092471</span>
-              </td>
-              <td>
-                <span className={styles.name}>Jane Doe</span>
-              </td>
-              <td>
-                <span className={styles.address}>
-                  134 Johnpur st. 213-11 CA
-                </span>
-              </td>
-              <td>
-                <span className={styles.total}>$79.80</span>
-              </td>
-            </tr>
+            <thead>
+              <tr className={styles.trTitle}>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Address</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className={styles['tr__value']}>
+                <td>
+                  <span className={styles.id}>328092471</span>
+                </td>
+                <td>
+                  <span className={styles.name}>Jane Doe</span>
+                </td>
+                <td>
+                  <span className={styles.address}>
+                    134 Johnpur st. 213-11 CA
+                  </span>
+                </td>
+                <td>
+                  <span className={styles.total}>$79.80</span>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div className={styles.row}>
