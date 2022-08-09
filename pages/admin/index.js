@@ -109,7 +109,17 @@ const AdminPage = ({ products, orders }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ctx => {
+  const myCookie = ctx.req?.cookies || '';
+
+  if (myCookie.token !== process.env.TOKEN) {
+    return {
+      redirect: {
+        destination: '/admin/login',
+        permanent: false, // same tab
+      },
+    };
+  }
   const productResponse = await axios.get('http://localhost:3000/api/products');
   const orderResponse = await axios.get('http://localhost:3000/api/orders');
 
