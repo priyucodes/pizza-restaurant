@@ -24,7 +24,8 @@ const Cart = () => {
   const dispatch = useDispatch();
   const createOrderPayment = async data => {
     try {
-      const res = await axios.post('http://localhost:3000/api/orders', data, {
+      // ok need to add relative path
+      const res = await axios.post('/api/orders', data, {
         headers: {
           'Content-Type': 'application/json',
         },
