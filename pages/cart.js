@@ -22,16 +22,20 @@ const Cart = () => {
   const style = { layout: 'vertical' };
   const router = useRouter();
   const dispatch = useDispatch();
-  const createOrder = async data => {
+  const createOrderPayment = async data => {
     try {
-      const res = await axios.post('http://localhost:3000/api/orders', data);
-
+      const res = await axios.post('http://localhost:3000/api/orders', data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log(res);
       if (res.status === 201) {
         dispatch(reset());
         router.push(`/orders/${res.data._id}`);
       }
     } catch (err) {
-      console.log('Error occured while creating your order ma queen');
+      console.log('Error occured while creating your order');
       console.log(err);
     }
   };
@@ -79,7 +83,7 @@ const Cart = () => {
           onApprove={function (data, actions) {
             return actions.order.capture().then(function (details) {
               const shipping = details.purchase_units[0].shipping;
-              createOrder({
+              createOrderPayment({
                 customer: shipping.name.full_name,
                 address: shipping.address.address_line_1,
                 total: cart.total,
@@ -188,7 +192,12 @@ const Cart = () => {
           )}
         </div>
       </div>
-      {cash && <OrderDetail total={cart.total} createOrder={createOrder} />}
+      {cash && (
+        <OrderDetail
+          total={cart.total}
+          createOrderPayment={createOrderPayment}
+        />
+      )}
     </div>
   );
 };
